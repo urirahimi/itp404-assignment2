@@ -48,11 +48,3 @@ $("#search-input").on("submit", function(e) {
     }
   );
 });
-
-// $.getJSON("https://api.github.com/users/wycats/repos").then(subreddits => {
-//   console.log(subreddits);
-//   let renderedRepos = renderRepos({
-//     repos: repositories
-//   });
-//   $("body").append(renderedRepos);
-// });
