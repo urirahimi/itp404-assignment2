@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Client-side Templating Demo</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <form id="search-input" class="form-style">
+    <input class="form-label" id="query" type="text" placeholder="Search for subreddits..." name="search">
+    <button class="form-button" type="submit"> Submit <i class="fa fa-search"></i></button>
+  </form>
+  <div id="loader" class="loader">Loading...</div>
+
+  <template id="subreddit-template">
+    {{#each subreddit}}
+    <div class="subreddits">
+      <a href="{{url}}" target="_blank"> Title: {{title}} </a>
+      <h1> Score: {{score}} </h1>
+      <h1> Subscribers: {{subreddit_subscribers}}</h1>
+      {{#if num_comments}}
+      <h1>Comments: {{num_comments}}</h1>
+      {{else}}
+      <h1>Comments: No Comments</h1>
+      {{/if}}
+    </div>
+    {{/each}}
+  </template>
+
+
+  <!-- <template id="repos-template">
+      {{#each repos}}
+        <div class="repo">
+          <h3>{{name}}</h3>
+          <p>Created At: {{relative-date created_at}}</p>
+          <p>Last Updated: {{relative-date updated_at}}</p>
+          {{#if description}}
+            <p>{{description}}</p>
+          {{else}}
+            <p>No description</p>
+          {{/if}}
+    
+          {{#if stargazers_count}}
+            Stars: {{stargazers_count}}
+          {{else}}
+            No stars
+          {{/if}}
+        </div>
+      {{/each}}
+    </template> -->
+
+  <script src="jquery-3.3.1.js"></script>
+  <script src="moment.js"></script>
+  <script src="handlebars-v4.0.11.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
